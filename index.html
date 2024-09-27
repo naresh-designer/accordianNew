@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .accordian_title{
+            cursor: pointer;
+        }
+        .accordian_content{
+            display: none;
+        }
+        .accordian_items.active .accordian_content{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordian" >
+        <div class="accordian_items">
+            <div class="accordian_title">Test One</div>
+            <div class="accordian_content">Test fsf One</div>
+        </div>
+        <div class="accordian_items">
+            <div class="accordian_title">Test Two</div>
+            <div class="accordian_content">Test wwqeqw Two</div>
+        </div>
+        <div class="accordian_items">
+            <div class="accordian_title">Test Three</div>
+            <div class="accordian_content">Test bmbmb Three</div>
+        </div>
+    </div>
+    <script>
+        const accordianItems = document.querySelectorAll('.accordian_items')
+
+        
+        
+        accordianItems.forEach((items) => {
+            const title = items.querySelector('.accordian_title') 
+            const content = items.querySelector('.accordian_content')
+
+            title.addEventListener('click', () => {
+               for(var i = 0; i < accordianItems.length ; i++){
+                if(accordianItems[i] != items){
+                    accordianItems[i].classList.remove('active')
+                }else{
+                    items.classList.toggle('active')
+                }
+               }
+                
+                
+            } )
+        } )
+    </script>
+</body>
+</html>
